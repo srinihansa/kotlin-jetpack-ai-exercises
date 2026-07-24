@@ -1,0 +1,75 @@
+# =========================
+# Android / Gradle
+# =========================
+.gradle/
+build/
+*/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# APK / AAB
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Kotlin
+*.kotlin_module
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Secrets
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# Firebase
+google-services.json
+
+# Signing configs
+keystore.properties
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# Terraform
+.terraform/
+*.tfstate*
+
+# Coverage
+coverage/
+htmlcov/
+
+# Temporary files
+tmp/
+temp/
