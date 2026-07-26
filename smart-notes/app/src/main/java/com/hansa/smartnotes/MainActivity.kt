@@ -3,45 +3,39 @@ package com.hansa.smartnotes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.hansa.smartnotes.model.Note
+import com.hansa.smartnotes.ui.components.NoteCard
 import com.hansa.smartnotes.ui.theme.SmartNotesTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContent {
             SmartNotesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Smart Notes",
-                        modifier = Modifier.padding(innerPadding)
+                Surface(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    NoteCard(
+                        note = Note(
+                            id = 1,
+                            title = "Android learning plan",
+                            content = "Learn Kotlin, Jetpack Compose, Room, ViewModel, and Android testing.",
+                            updatedAt = "Updated today"
+                        ),
+                        onClick = {
+                            println("Note card clicked")
+                        },
+                        modifier = Modifier.padding(16.dp)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SmartNotesTheme {
-        Greeting("Android")
     }
 }
